@@ -59,3 +59,54 @@ In order ptr1 pointing to the variable var_x and ptr2 pointed to ptr1, the instr
 ptr1 = &var_x;
 ptr2 = &ptr1
 ```
+
+
+# How This Code Work
+```c
+#include <stdio.h>
+
+void rotation(int *, int *, int *);
+
+main() 
+{
+	int a, b, c;
+
+	puts("ROTATION\n");
+	printf("a: ");
+	scanf_s("%d", &a);
+	printf("b: ");
+	scanf_s("%d", &b);
+	printf("c: ");
+	scanf_s("%d", &c);
+	puts("\n\nBefore enter rotation() function");
+	printf("a: %d b: %d c: %d\n", a, b, c);
+	rotation(&a, &b, &c);
+	puts("After enter rotation() function");
+	printf("a: %d b: %d c: %d\n", a, b, c);
+}
+
+void rotation(int *px, int *py, int *pz) {
+	int temp;
+
+	temp = *pz;
+	*pz = *py;
+	*py = *px;
+	*px = temp;
+}
+```
+![alt text](https://github.com/rizalasrul/c-basic-pointer/blob/master/Images/2.png)
+
+The program will define a function assigned to conduct the rotation so that the value of a move to b, b to c, and c to a value and display the results in the main function. There is a rotation function of type void.
+
+In the main function, occurs declaring variables a, b, and c to be included in value by the user. This function also occurs in a function call rotation with the actual parameter is the address of each of the variables a, b, and c.
+
+In the rotation function, there is a formal parameter. Because the actual parameters sent by the function main is the address of the variables, then the catch is variable pointer. There are three formal parameter of type pointer to int named px, py, and pz each of which contains the address of the variables a, b, and c. In addition there is also a variable of type int temp. For the process of exchange, the first value in the address pz will be assingment to the variable temp. After that exchange carried out according to the program listings. Because of what happened in this function is indirect access, then that variable in the main () function is also influential.
+
+
+# Conclusion
+* The type pointer variable is the type of a variable that contains the address of the actual variable.
+* The type pointer variable must match the type designated variable.
+* The relationship between pointers and arrays in C is strong, the real cause internal array will be translated in the form of a pointer.
+* Pointer variables can be string, array, or other variable types.
+* A pointer may point to another pointer (pointer to pointer).
+* Variable pointer can be used as a parameter in a function, as also can be used as the return value (return value) of a function.
