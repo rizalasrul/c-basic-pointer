@@ -40,4 +40,22 @@ The relationship between pointers and arrays in C is strong. Ingatl that the rea
 ## POINTER TO STRING
 String is not a new data type in C, rather it is a set of characters (array of char). Variable array that is written without parentheses elbow is equivalent to the address of the array on the index-0.
 ## ARRAY TO POINTER
+An array can be used to store a pointer. If declared:
+```c
+char *day_name[10];
+```
+a statement to declare an array of pointers to char. day_name array consists of 10 elements in the form of a pointer of the type char.
 ## POINTER TO POINTER
+A pointer can refer to another pointer. If declared:
+```c
+int var_x = 25, *ptr1, **ptr2
+```
+* var_x is a variable of type int.
+* ptr1 is a pointer to a variable of type int.
+* ptr2 is a variable of type pointer to pointer to int.
+
+In order ptr1 pointing to the variable var_x and ptr2 pointed to ptr1, the instructions are:
+```c
+ptr1 = &var_x;
+ptr2 = &ptr1
+```
