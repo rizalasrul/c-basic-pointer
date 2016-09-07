@@ -23,9 +23,21 @@ The way how to refers pointer variables to other variables:
     Then &x means "the address of the variable x"
 
     ```c
-    int *px, x = 10;
+    px = &x;
     ```
     
     means that px rated be the address of the variable x.
 4. After the statement is executed then it can be said that px points to the variable x.
 
+The result is something like this:
+
+![alt text](https://github.com/rizalasrul/c-basic-pointer/blob/master/Images/1.png)
+
+A location or address that has been designated by a pointer, then the value of its location can be accessed either direct or indirect through the pointer.
+
+## POINTER TO ARRAY
+The relationship between pointers and arrays in C is strong. Ingatl that the real internal array will be translated in the form of a pointer. Because the array is written without parentheses elbow is equivalent to the address of the first element (index-0) of the array.
+## POINTER TO STRING
+String is not a new data type in C, rather it is a set of characters (array of char). Variable array that is written without parentheses elbow is equivalent to the address of the array on the index-0.
+## ARRAY TO POINTER
+## POINTER TO POINTER
